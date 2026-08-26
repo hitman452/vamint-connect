@@ -47,9 +47,9 @@ const pillars = [
 ];
 
 const stats = [
-  { value: "500+", label: "Members Trained" },
-  { value: "10+", label: "Hackathons Hosted" },
-  { value: "25+", label: "Workshops Conducted" },
+  { value: "50+", label: "Participants Connected" },
+  { value: "4+", label: "Events Hosted" },
+  { value: "5+", label: "Workshops Conducted" },
 ];
 
 function Home() {
@@ -67,9 +67,11 @@ function Home() {
             </p>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
               Vamint is the technical club at Genba Sopanrao Moze College of Engineering. We run
-              hackathons, technical workshops on emerging technologies, and soft-skills development
-              events — helping students turn classroom learning into practical, industry-ready
-              ability.
+              hackathons, technical workshops on emerging technologies, soft-skills development
+              events, and much more — helping students turn classroom learning into practical,
+              industry-ready ability.
+              <br />
+              We make you understand that learning and growing can be fun and enjoyable!
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -113,14 +115,14 @@ function Home() {
         <SectionTitle eyebrow="// Upcoming event" title="Save the date" />
         <Card className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <h3 className="font-display text-2xl font-bold text-primary">CodeSprint 2026</h3>
-            <p className="mt-1 text-sm font-medium text-gold">24-Hour Hackathon</p>
+            <h3 className="font-display text-2xl font-bold text-primary">Orientation 2026</h3>
+            <p className="mt-1 text-sm font-medium text-gold">A welcoming event for our new members</p>
             <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-2">
-                <CalendarDays className="h-4 w-4" /> October 18–19, 2026
+                <CalendarDays className="h-4 w-4" /> September 3, 2026
               </span>
               <span className="inline-flex items-center gap-2">
-                <MapPin className="h-4 w-4" /> Main Auditorium, GSMCOE
+                <MapPin className="h-4 w-4" /> Seminar Hall, E building, GSMCOE, Balewadi
               </span>
             </div>
           </div>
@@ -128,7 +130,7 @@ function Home() {
             to="/events"
             className="shrink-0 rounded-lg bg-gold px-5 py-3 text-center text-sm font-semibold text-gold-foreground transition-opacity hover:opacity-90"
           >
-            Register Now
+            What's happening?
           </Link>
         </Card>
       </Section>
