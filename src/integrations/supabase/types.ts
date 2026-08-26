@@ -14,7 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_messages: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          message_type: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          message_type: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          message_type?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      event_registrations: {
+        Row: {
+          created_at: string
+          department: string
+          email: string
+          event_name: string
+          full_name: string
+          id: string
+          phone_number: string
+          year_of_study: string
+        }
+        Insert: {
+          created_at?: string
+          department: string
+          email: string
+          event_name: string
+          full_name: string
+          id?: string
+          phone_number: string
+          year_of_study: string
+        }
+        Update: {
+          created_at?: string
+          department?: string
+          email?: string
+          event_name?: string
+          full_name?: string
+          id?: string
+          phone_number?: string
+          year_of_study?: string
+        }
+        Relationships: []
+      }
+      member_registrations: {
+        Row: {
+          created_at: string
+          department: string
+          email: string
+          full_name: string
+          id: string
+          phone_number: string
+          year_of_study: string
+        }
+        Insert: {
+          created_at?: string
+          department: string
+          email: string
+          full_name: string
+          id?: string
+          phone_number: string
+          year_of_study: string
+        }
+        Update: {
+          created_at?: string
+          department?: string
+          email?: string
+          full_name?: string
+          id?: string
+          phone_number?: string
+          year_of_study?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
