@@ -47,9 +47,9 @@ const pillars = [
 ];
 
 const stats = [
-  { value: "500+", label: "Members Trained" },
-  { value: "10+", label: "Hackathons Hosted" },
-  { value: "25+", label: "Workshops Conducted" },
+  { value: "50+", label: "Participants Connected" },
+  { value: "4+", label: "Events Hosted" },
+  { value: "5+", label: "Workshops Conducted" },
 ];
 
 function Home() {
