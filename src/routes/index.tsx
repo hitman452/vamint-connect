@@ -67,9 +67,11 @@ function Home() {
             </p>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
               Vamint is the technical club at Genba Sopanrao Moze College of Engineering. We run
-              hackathons, technical workshops on emerging technologies, and soft-skills development
-              events — helping students turn classroom learning into practical, industry-ready
-              ability.
+              hackathons, technical workshops on emerging technologies, soft-skills development
+              events, and much more — helping students turn classroom learning into practical,
+              industry-ready ability.
+              <br />
+              We make you understand that learning and growing can be fun and enjoyable!
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
