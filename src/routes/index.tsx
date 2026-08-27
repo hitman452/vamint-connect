@@ -135,16 +135,7 @@ function Home() {
         </Card>
       </Section>
 
-      <section className="border-y border-border bg-card">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:grid-cols-3">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="font-display text-4xl font-bold text-primary">{s.value}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <EventMarquee />
 
       <Section>
         <div className="rounded-2xl border border-border bg-primary px-6 py-12 text-center md:px-12">
