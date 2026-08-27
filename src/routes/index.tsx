@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Code2, GraduationCap, Mic, Users, CalendarDays, MapPin } from "lucide-react";
 import { Section, SectionTitle, Card } from "@/components/site/Section";
+import { EventMarquee } from "@/components/site/EventMarquee";
 import logo from "@/assets/vamint-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -46,11 +47,6 @@ const pillars = [
   },
 ];
 
-const stats = [
-  { value: "50+", label: "Participants Connected" },
-  { value: "4+", label: "Events Hosted" },
-  { value: "5+", label: "Workshops Conducted" },
-];
 
 function Home() {
   return (
