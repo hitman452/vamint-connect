@@ -1,14 +1,7 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import {
-  Field,
-  SubmitButton,
-  SuccessPanel,
-  YEARS,
-  inputClass,
-  validateEmail,
-  validatePhone,
-} from "./form-primitives";
+import { registrationSchema, fieldErrorsFromZod } from "@/lib/form-schemas";
+import { Field, SubmitButton, SuccessPanel, YEARS, inputClass } from "./form-primitives";
 
 type Values = {
   full_name: string;
@@ -50,33 +43,19 @@ export function RegistrationForm({
     setErrors((e) => ({ ...e, [key]: undefined }));
   };
 
-  const validate = () => {
-    const next: Partial<Record<keyof Values, string>> = {};
-    if (!values.full_name.trim()) next.full_name = "Full name is required.";
-    if (!values.phone_number.trim()) next.phone_number = "Phone number is required.";
-    else if (!validatePhone(values.phone_number))
-      next.phone_number = "Enter a valid phone number with at least 10 digits.";
-    if (!values.email.trim()) next.email = "Email is required.";
-    else if (!validateEmail(values.email)) next.email = "Enter a valid email address.";
-    if (!values.department.trim()) next.department = "Department is required.";
-    if (!values.year_of_study) next.year_of_study = "Select your year of study.";
-    setErrors(next);
-    return Object.keys(next).length === 0;
-  };
-
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
-    if (!validate()) return;
+
+    const parsed = registrationSchema.safeParse(values);
+    if (!parsed.success) {
+      setErrors(fieldErrorsFromZod(parsed));
+      return;
+    }
+
     setPending(true);
 
-    const payload = {
-      full_name: values.full_name.trim(),
-      phone_number: values.phone_number.trim(),
-      email: values.email.trim(),
-      department: values.department.trim(),
-      year_of_study: values.year_of_study,
-    };
+    const payload = parsed.data;
 
     const { error } =
       kind === "event"
