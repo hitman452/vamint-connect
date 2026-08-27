@@ -23,24 +23,24 @@ export const Route = createFileRoute("/achievements")({
 
 const entries = [
   {
-    title: "CodeSprint 2025",
+    title: "Site Craft 2025",
     meta: "48-Hour Hackathon — 2025",
-    text: "220+ participants across 40 teams built solutions for local NGOs; three teams went on to represent the college at a state-level hackathon.",
+    text: "40+ participants across 25 teams built solutions for local businesses; two teams went on to win the final round of this hackathon.",
   },
   {
-    title: "TechTalks: Future of AI",
+    title: "Open Debate competition participation",
     meta: "Workshop Series — 2025",
-    text: "A 3-part workshop series on machine learning fundamentals, attended by 150+ students.",
+    text: "A 2-part debate series on Artificial Intelligence fundamentals, and it's affect on society attended by 150+ students.",
   },
   {
-    title: "Soft Skills Bootcamp",
+    title: "Debate Competition at GSMCoE",
     meta: "Bootcamp — 2025",
-    text: "An intensive two-day bootcamp on communication, public speaking, and leadership for 80+ members.",
+    text: "An intensive 5 hours competition on facts, logic, communication, public speaking, and leadership for 20+ members.",
   },
   {
-    title: "Inter-College Hackathon Circuit 2025",
+    title: "Technobash 2025",
     meta: "Award — 2025",
-    text: "Vamint's team placed 1st runner-up representing the college.",
+    text: "Vamint played an crucial part in conducting the whole event. Organising and managing a team of 40+ students, designing and conducting technical and non technical events for the Computer department.",
   },
 ];
 
