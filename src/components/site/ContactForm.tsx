@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import {
-  Field,
-  SubmitButton,
-  SuccessPanel,
-  inputClass,
-  validateEmail,
-} from "./form-primitives";
+import { contactSchema, fieldErrorsFromZod } from "@/lib/form-schemas";
+import { Field, SubmitButton, SuccessPanel, inputClass } from "./form-primitives";
 
 const TYPES = ["Suggestion", "Query", "Feedback"] as const;
 
@@ -28,22 +23,15 @@ export function ContactForm() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
-    const next: Partial<Record<keyof Values, string>> = {};
-    if (!values.name.trim()) next.name = "Name is required.";
-    if (!values.email.trim()) next.email = "Email is required.";
-    else if (!validateEmail(values.email)) next.email = "Enter a valid email address.";
-    if (!values.message_type) next.message_type = "Select a message type.";
-    if (!values.message.trim()) next.message = "Please write your message.";
-    setErrors(next);
-    if (Object.keys(next).length > 0) return;
+
+    const parsed = contactSchema.safeParse(values);
+    if (!parsed.success) {
+      setErrors(fieldErrorsFromZod(parsed));
+      return;
+    }
 
     setPending(true);
-    const { error } = await supabase.from("contact_messages").insert({
-      name: values.name.trim(),
-      email: values.email.trim(),
-      message_type: values.message_type,
-      message: values.message.trim(),
-    });
+    const { error } = await supabase.from("contact_messages").insert(parsed.data);
     setPending(false);
     if (error) {
       setFormError("Something went wrong while sending your message. Please try again.");
