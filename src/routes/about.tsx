@@ -43,32 +43,32 @@ const pillars = [
 
 const committee = [
   {
-    name: "Aarav Kulkarni",
+    name: "Mrunmayee Kokitkar",
     role: "President",
     bio: "Leads Vamint's overall vision and represents the club to the college administration.",
   },
   {
-    name: "Meera Joshi",
+    name: "Hitesh Khairnar",
     role: "Vice President",
     bio: "Oversees event execution and coordinates between all internal teams.",
   },
   {
-    name: "Sanika Patil",
+    name: "Janvi Rane",
     role: "Secretary",
     bio: "Manages club records, communications, and meeting coordination.",
   },
   {
-    name: "Rohan Deshpande",
+    name: "Nakul Kshirsagar",
     role: "Treasurer",
     bio: "Handles budgeting and sponsorships for club events.",
   },
   {
-    name: "Isha Wagh",
+    name: "Sristi Sharma",
     role: "Technical Lead",
     bio: "Designs the technical curriculum for hackathons and workshops.",
   },
   {
-    name: "Yash Bhosale",
+    name: "Dyaneshwar Galkar",
     role: "Event Coordinator",
     bio: "Plans logistics and execution for all Vamint events.",
   },
