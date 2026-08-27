@@ -51,11 +51,7 @@ export const registrationSchema = z.object({
     .string()
     .trim()
     .transform((raw) => cleanPhone(raw))
-    .pipe(
-      z
-        .string()
-        .regex(/^[6-9]\d{9}$/, { message: "Enter a valid 10-digit mobile number." })
-    ),
+    .pipe(z.string().regex(/^[6-9]\d{9}$/, { message: "Enter a valid 10-digit mobile number." })),
   email: z
     .string()
     .trim()
@@ -74,7 +70,7 @@ export const registrationSchema = z.object({
 export type RegistrationValues = z.infer<typeof registrationSchema>;
 
 export function fieldErrorsFromZod<T extends Record<string, unknown>>(
-  result: z.SafeParseReturnType<T, T>
+  result: z.SafeParseReturnType<T, T>,
 ): Partial<Record<keyof T, string>> {
   const errors: Partial<Record<keyof T, string>> = {};
   if (!result.success) {
